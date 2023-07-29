@@ -5,6 +5,7 @@ import { FaPhone, FaShop } from "react-icons/fa6";
 
 const SecondCard = () => {
   const { image } = useContext(store);
+   const url = image ?? image[0];
   // +++++++++++++++++++++  useRef hooks
   const icon = useRef(null);
   const imgCard = useRef();
@@ -42,7 +43,7 @@ const SecondCard = () => {
     imgCard.current.appendChild(selectedIcon);
     selectedIcon.style.left = x - selectedIcon.getBoundingClientRect().width / 2 + "px";
     selectedIcon.style.top =y - selectedIcon.getBoundingClientRect().height / 2 + "px";
-    selectedIcon = null;
+    setSelectedIcon(null)
   };
   const handleLeftDown = () => {
    let interval= setInterval(()=>{
@@ -110,7 +111,7 @@ const handleBottomDown = () => {
         <div
           ref={imgCard}
           className="img-card"
-          style={{ backgroundImage: "url(" + image[1] + ")" }}
+          style={{ backgroundImage: "url(" + url + ")" }}
         >
           <div className="list">
             <div style={{ display: "flex" }} className="contact-info">

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {memo} from "react";
 import SecondCard from "../components/SecondCard";
 import FirstCard from "../components/FirstCard";
 import Form from "../components/Form";
@@ -12,10 +12,10 @@ const Home = () => {
       </aside>
       <section className="section">
         <FirstCard />
-        <SecondCard />
+        <SecondCard /> 
       </section>
     </div>
   );
 };
 
-export default Home;
+export default memo(Home);
