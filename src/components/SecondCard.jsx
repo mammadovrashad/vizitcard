@@ -5,7 +5,7 @@ import { FaPhone, FaShop } from "react-icons/fa6";
 
 const SecondCard = () => {
   const { image } = useContext(store);
-   const url = image ?? image[0];
+  
   // +++++++++++++++++++++  useRef hooks
   const icon = useRef(null);
   const imgCard = useRef();
@@ -111,7 +111,7 @@ const handleBottomDown = () => {
         <div
           ref={imgCard}
           className="img-card"
-          style={{ backgroundImage: "url(" + url + ")" }}
+          style={{ backgroundImage: "url(" + image[1] + ")" }}
         >
           <div className="list">
             <div style={{ display: "flex" }} className="contact-info">
